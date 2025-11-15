@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="mr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MK naturals — Professional Registration</title>
+  <meta name="description" content="MK naturals — registration & lead capture form (professional template)" />
+
+  <style>
+    /* ========== Base ========== */
+    :root{
+      --bg:#0b1220;
+      --surface:#0f1a2b;
+      --muted:#9aa7bd;
+      --accent:#06b6d4;
+      --accent-2:#7c3aed;
+      --card:#0e1722;
+      --success:#28c76f;
+      --danger:#ff6b6b;
+      --radius:12px;
+      --container:980px;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #071025 0%, #061322 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      padding:28px 18px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--container);
+    }
+
+    /* Header */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+    }
+    .brand{
+      display:flex;
+      gap:14px;
+      align-items:center;
+    }
+    .logo{
+      width:64px;height:64px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;font-weight:800;color:#042026;font-size:18px;
+      box-shadow:0 8px 26px rgba(2,6,23,0.6);
+    }
+    .brand h1{margin:0;font-size:20px}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Layout */
+    .grid{ display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start; }
+    @media (max-width:980px){ .grid{ grid-template-columns: 1fr; } }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+      border-radius:var(--radius);
+      padding:18px;
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 12px 40px rgba(2,6,23,0.5);
+    }
+
+    /* Form */
+    form{ display:flex; flex-direction:column; gap:12px }
+    label{ font-size:13px; color:var(--muted); display:block; margin-bottom:6px }
+    .row{ display:flex; gap:12px }
+    .row .col{ flex:1 }
+    input[type="text"], input[type="email"], select, textarea, input[type="color"], input[type="range"]{
+      width:100%;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.04);
+      background:transparent;
+      color:inherit;
+      font-size:14px;
+      outline:none;
+    }
+    textarea{ min-height:100px; resize:vertical }
+    select{ appearance:none; background-image: linear-gradient(45deg, transparent 50%, #fff 50%); background-position: calc(100% - 18px) 50%; background-size: 8px 8px; background-repeat: no-repeat; padding-right:36px; }
+
+    .checkboxes{ display:flex; flex-direction:column; gap:8px; }
+    .inline{ display:flex; gap:10px; align-items:center }
+    .inline input{ width:auto; transform:scale(1.05); margin-right:8px }
+
+    /* Progress */
+    .progress-wrap{ margin-top:8px }
+    .progress-track{
+      height:14px; width:100%; background: rgba(255,255,255,0.04); border-radius:999px; overflow:hidden;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+    }
+    .progress-bar{
+      height:100%;
+      width:40%;
+      background: linear-gradient(90deg,var(--accent),var(--accent-2));
+      transition: width .25s ease, background .2s ease;
+    }
+    .helper{ font-size:13px; color:var(--muted) }
+
+    /* Actions */
+    .actions{ display:flex; gap:10px; margin-top:8px; flex-wrap:wrap }
+    .btn{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border-radius:10px; border:0; cursor:pointer; font-weight:700;
+    }
+    .btn-primary{ background: linear-gradient(90deg,var(--accent),#3dd6d6); color:#042026 }
+    .btn-ghost{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04) }
+    .btn-danger{ background: linear-gradient(90deg,#ff6b6b,#ff4d4d); color:white }
+
+    .status{ margin-top:8px; font-size:14px }
+    .status.success{ color:var(--success) }
+    .status.error{ color:var(--danger) }
+
+    /* Right column */
+    .side { display:flex; flex-direction:column; gap:12px; }
+    .meta-row{ display:flex; justify-content:space-between; align-items:center; gap:8px }
+    .small{ font-size:13px; color:var(--muted) }
+
+    footer{ margin-top:16px; text-align:center; color:var(--muted); font-size:13px }
+
+    /* small screens */
+    @media (max-width:520px){
+      .logo{ width:52px; height:52px; font-size:16px }
+      body{ padding:18px 12px }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">MK</div>
+        <div>
+          <h1>MK naturals</h1>
+          <p>नैसर्गिक उत्पादन — विश्वासाने & दर्जाने</p>
+        </div>
+      </div>
+      <div class="small" aria-hidden="false">
+        ई-मेल: <strong>munjajiku178@.com</strong>
+      </div>
+    </header>
+
+    <section class="grid" aria-labelledby="form-title">
+      <!-- LEFT: Form -->
+      <div class="card" aria-label="Registration form card">
+        <h2 id="form-title" style="margin:0 0 6px 0">नोंदणी व संपर्क</h2>
+        <p class="helper" style="margin-top:0">खालील फॉर्म भरून सबमिट करा — तुम्ही CSV म्हणून फाइल डाउनलोड करू शकता.</p>
+
+        <form id="leadForm" onsubmit="handleSubmit(event)" novalidate>
+          <div class="row">
+            <div class="col">
+              <label for="name">पूर्ण नाव <span aria-hidden="true" style="color:var(--danger)">*</span></label>
+              <input id="name" name="name" type="text" placeholder="तुमचं पूर्ण नाव" required aria-required="true" />
+            </div>
+
+            <div class="col">
+              <label for="business">व्यवसायाचे नाव</label>
+              <input id="business" name="business" type="text" value="MK naturals" />
+            </div>
+          </div>
+
+          <div>
+            <label for="email">ई-मेल <span aria-hidden="true" style="color:var(--danger)">*</span></label>
+            <input id="email" name="email" type="email" value="munjajiku178@.com" placeholder="you@example.com" required aria-required="true" />
+            <div id="emailHint" class="helper">नोट: योग्य ई-मेल स्वरूप असणे आवश्यक आहे.</div>
+          </div>
+
+          <div>
+            <label for="service">सेवा (एक निवडा) <span style="color:var(--danger)">*</span></label>
+            <select id="service" name="service" required aria-required="true">
+              <option value="">-- निवडा --</option>
+              <option value="products">Natural Products (खरेदी)</option>
+              <option value="videos">Motivational Videos</option>
+              <option value="business">Business Guidance</option>
+              <option value="courses">Online Courses</option>
+            </select>
+          </div>
+
+          <div>
+            <label>अतिरिक्त सेवा (अनेक निवडता येतात)</label>
+            <div class="checkboxes" role="group" aria-label="additional services">
+              <label class="inline"><input type="checkbox" class="cb" value="quotes" /> Daily Quotes</label>
+              <label class="inline"><input type="checkbox" class="cb" value="tips" /> Business Tips</label>
+              <label class="inline"><input type="checkbox" class="cb" value="recipes" /> Natural Recipes</label>
+              <label class="inline"><input type="checkbox" id="allIncluded" class="cb" value="all" /> सर्व काही भेटेल (All-in-one)</label>
+            </div>
+          </div>
+
+          <div>
+            <label for="address">पत्ता (ऐच्छिक — इतरांना सोडता येईल)</label>
+            <textarea id="address" name="address" placeholder="पत्ता / वितरण पत्ता (ऐच्छिक)"></textarea>
+          </div>
+
+          <div>
+            <label for="progressRange">Progress (%) — स्लाइड करा</label>
+            <input id="progressRange" name="progress" type="range" min="0" max="100" value="40" />
+            <div class="progress-wrap">
+              <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40">
+                <div id="progressBar" class="progress-bar" style="width:40%"></div>
+              </div>
+              <div class="helper" id="percentLabel">40%</div>
+            </div>
+          </div>
+
+          <div>
+            <label for="progressColor">Progress Color</label>
+            <input id="progressColor" name="progressColor" type="color" value="#06b6d4" aria-label="progress color picker" />
+          </div>
+
+          <div class="actions" role="group" aria-label="form actions">
+            <button type="submit" class="btn btn-primary" id="submitBtn">सबमिट करा</button>
+            <button type="button" class="btn btn-ghost" onclick="prefillDemo()">डेमो भरा</button>
+            <button type="button" class="btn btn-ghost" onclick="clearForm()">रद्द करा</button>
+            <button type="button" class="btn btn-ghost" onclick="downloadCSV()" title="Filled data will be downloaded as CSV">CSV डाउनलोड</button>
+            <button type="button" class="btn btn-danger" onclick="resetAll()">Reset</button>
+          </div>
+
+          <div id="formStatus" class="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <!-- RIGHT: Meta & Quick Info -->
+      <aside class="side">
+        <div class="card">
+          <div class="meta-row">
+            <div>
+              <div class="small">Account</div>
+              <strong>MK naturals</strong>
+            </div>
+            <div style="text-align:right">
+              <div class="small">Contact</div>
+              <div><strong>munjajiku178@.com</strong></div>
+            </div>
+          </div>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+
+          <div class="small">Quick tips</div>
+          <ul class="small" style="margin:8px 0 0 18px; padding:0">
+            <li>ई-मेल योग्य स्वरूपात द्या (a@b.com).</li>
+            <li>"सर्व काही" निवडल्यावर इतर चेकबॉक्स auto-checked होतात.</li>
+            <li>CSV डाउनलोड तुम्हाला भरलेला डेटा लोकलपणे देईल.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="small">Template Version</div>
+          <div style="font-weight:700;margin-top:6px">Professional — Single-file</div>
+          <div class="small" style="margin-top:8px">Responsive • Accessible • CSV export</div>
+        </div>
+      </aside>
+    </section>
+
+    <footer>
+      © <span id="year"></span> MK naturals — All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Elements
+    const leadForm = document.getElementById('leadForm');
+    const allIncluded = document.getElementById('allIncluded');
+    const cbList = document.querySelectorAll('.cb');
+    const progressRange = document.getElementById('progressRange');
+    const progressBar = document.getElementById('progressBar');
+    const percentLabel = document.getElementById('percentLabel');
+    const progressColor = document.getElementById('progressColor');
+    const formStatus = document.getElementById('formStatus');
+    const yearEl = document.getElementById('year');
+
+    yearEl.textContent = new Date().getFullYear();
+
+    // init
+    updateProgress(progressRange.value);
+    updateColor(progressColor.value);
+
+    // event listeners
+    progressRange.addEventListener('input', (e) => {
+      updateProgress(e.target.value);
+    });
+
+    progressColor.addEventListener('input', (e) => {
+      updateColor(e.target.value);
+    });
+
+    allIncluded.addEventListener('change', (e) => {
+      if(e.target.checked){
+        cbList.forEach(cb => cb.checked = true);
+      } else {
+        // uncheck only the 'all' box (others kept)
+        cbList.forEach(cb => { if(cb !== allIncluded) cb.checked = false });
+      }
+    });
+
+    // helper fns
+    function updateProgress(val){
+      progressBar.style.width = val + '%';
+      percentLabel.textContent = val + '%';
+      // update aria
+      const track = document.querySelector('.progress-track');
+      track.setAttribute('aria-valuenow', val);
+    }
+
+    function updateColor(col){
+      progressBar.style.background = col;
+    }
+
+    // demo fill
+    function prefillDemo(){
+      document.getElementById('name').value = 'श्री/सुश्री उदाहरण';
+      document.getElementById('business').value = 'MK naturals';
+      document.getElementById('email').value = 'munjajiku178@.com';
+      document.getElementById('service').value = 'products';
+      document.getElementById('address').value = 'परभणी, महाराष्ट्र';
+      document.querySelectorAll('.cb').forEach((b,i)=> b.checked = i<2);
+      progressRange.value = 55; updateProgress(55);
+      progressColor.value = '#06b6d4'; updateColor('#06b6d4');
+      showStatus('डेमो डेटा भरला — आवश्यक असल्यास संपादित करा आणि सबमिट करा.', 'success');
+    }
+
+    // clear form except business/email
+    function clearForm(){
+      document.getElementById('name').value = '';
+      document.getElementById('service').value = '';
+      document.getElementById('address').value = '';
+      document.querySelectorAll('.cb').forEach(cb=> cb.checked = false);
+      progressRange.value = 40; updateProgress(40);
+      progressColor.value = '#06b6d4'; updateColor('#06b6d4');
+      showStatus('फॉर्म साफ केला.', 'success');
+    }
+
+    function resetAll(){
+      leadForm.reset();
+      updateProgress(40);
+      updateColor('#06b6d4');
+      showStatus('', '');
+    }
+
+    function showStatus(msg, type){
+      formStatus.textContent = msg;
+      formStatus.className = 'status' + (type ? ' ' + type : '');
+    }
+
+    // CSV export helper
+    function convertToCSV(obj){
+      // keys order
+      const keys = ['name','business','email','service','services','address','progress','progressColor'];
+      const header = ['Name','Business','Email','Selected Service','Additional Services','Address','Progress','ProgressColor'];
+      const row = keys.map(k => {
+        let v = obj[k];
+        if(Array.isArray(v)) v = v.join('; ');
+        if(v === undefined || v === null) v = '';
+        // escape quotes
+        return `"${String(v).replace(/"/g,'""')}"`;
+      });
+      return header.join(',') + "\n" + row.join(',');
+    }
+
+    function downloadCSV(){
+      const data = gatherFormData();
+      const csv = convertToCSV(data);
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      const fname = 'mk_naturals_lead_' + new Date().toISOString().slice(0,19).replace(/[:T]/g,'-') + '.csv';
+      a.download = fname;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+      showStatus('CSV डाउनलोड सुरु आहे — फाइल लोकल मशीनवर सेव्ह झाली आहे.', 'success');
+    }
+
+    function gatherFormData(){
+      const name = document.getElementById('name').value.trim();
+      const business = document.getElementById('business').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const service = document.getElementById('service').value;
+      const services = Array.from(document.querySelectorAll('.cb'))
+                          .filter(cb => cb.checked)
+                          .map(cb => cb.value);
+      const address = document.getElementById('address').value.trim();
+      const progress = progressRange.value;
+      const progressCol = progressColor.value;
+      return { name, business, email, service, services, address, progress, progressColor: progressCol };
+    }
+
+    // Submit handler
+    function handleSubmit(e){
+      e.preventDefault();
+      showStatus('', '');
+      const data = gatherFormData();
+
+      // validation
+      if(!data.name){
+        showStatus('कृपया नाव भरा.', 'error'); return;
+      }
+      if(!data.email){
+        showStatus('कृपया ई-मेल भरा.', 'error'); return;
+      }
+      // basic email validation
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){
+        showStatus('ई-मेल सत्यापित करा — योग्य स्वरूप आवश्यक आहे (उदा: name@example.com).', 'error'); return;
+      }
+      if(!data.service){
+        showStatus('कृपया एक सेवा निवडा.', 'error'); return;
+      }
+
+      // successful — show message and offer CSV download automatically
+      showStatus('फॉर्म यशस्वीपणे भरला — CSV तयार करत आहोत...', 'success');
+
+      // create CSV and auto-download
+      setTimeout(()=> {
+        const csv = convertToCSV(data);
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        const fname = 'mk_naturals_lead_' + new Date().toISOString().slice(0,19).replace(/[:T]/g,'-') + '.csv';
+        a.download = fname;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+        showStatus('सबमिट पूर्ण — CSV तुम्हाला डाउनलोड झाली आहे. धन्यवाद!', 'success');
+
+        // optional: clear only name/address/services for convenience
+        document.getElementById('name').value = '';
+        document.getElementById('address').value = '';
+        document.querySelectorAll('.cb').forEach(cb=> cb.checked = false);
+        document.getElementById('service').value = '';
+        progressRange.value = 40; updateProgress(40);
+      }, 700);
+    }
+  </script>
+</body>
+</html>
